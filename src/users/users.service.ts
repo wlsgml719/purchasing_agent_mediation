@@ -12,6 +12,10 @@ export class UsersService {
     private userModel: Model<UserDocument>,
   ) {}
 
+  async findOne(email) {
+    return await this.userModel.findOne({ email });
+  }
+
   async signUp(createUserDto: CreateUserDto): Promise<User> {
     const hased = await bcrypt.hash(createUserDto.password, 10);
 
