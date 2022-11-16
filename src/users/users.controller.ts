@@ -7,6 +7,10 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private userService: UsersService) {}
 
+  async findOne(email) {
+    return await this.userService.findOne(email);
+  }
+
   @Post('signUp')
   @HttpCode(201)
   async signUp(@Body() createUserDto: CreateUserDto): Promise<User> {
