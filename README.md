@@ -1,10 +1,6 @@
 ## Purchasing Agent Mediation
 상품 판매자와 구매자간 구매대행 중개 서비스
 
-개발기간  
-
-사용기술  
-
 #### 목차
 - [프로젝트 설명](https://github.com/wlsgml719/cryptoBuiltInBoard/edit/main/README.md#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EB%AA%85)
   - 개발기간
