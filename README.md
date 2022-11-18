@@ -15,22 +15,22 @@
 
 ## 🔍 프로젝트 설명
   ### 개발기간
-    2022.11.8 - 2022.11.20
+  2022.11.8 - 2022.11.20
   ### 사용기술  
-    Node.js, Nest.js, Typescript, MongoDB
+  Node.js, Nest.js, Typescript, MongoDB
     
   ### 패키지 구조
-    ``` javascript
-    src
-    |- auth: 인증관련
-    |- common: 미들웨어 및 예외필터
-    |- users: 유저(판매자)관련
+  ``` javascript
+  src
+  |- auth: 인증관련
+  |- common: 미들웨어 및 예외필터
+  |- users: 유저(판매자)관련
 
-    ```
+  ```
   ### 프로젝트 실행 방법
-    ``` javascript
-    npm run start:dev
-    ```
+  ``` javascript
+  npm run start:dev
+  ```
   
   ### 요구사항 분석
   
