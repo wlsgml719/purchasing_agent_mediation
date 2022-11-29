@@ -24,6 +24,6 @@ export class UsersService {
       password: hased,
     });
 
-    return createdUser;
+    return createdUser.save();
   }
 }
