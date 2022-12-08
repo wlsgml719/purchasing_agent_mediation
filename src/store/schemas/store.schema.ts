@@ -5,10 +5,10 @@ export type StoreDocument = HydratedDocument<Store>;
 
 @Schema()
 export class Store {
-  @Prop()
+  @Prop({ type: String, required: true })
   name: string;
 
-  @Prop()
+  @Prop({ type: String })
   introduction?: string;
 }
 

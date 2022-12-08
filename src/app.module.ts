@@ -11,9 +11,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
-import { StoreModule } from './store/store.module';
 import { ServiceController } from './service/service.controller';
-import { ProductModule } from './product/product.module';
 import { StoreModule } from './store/store.module';
 
 @Module({
@@ -23,7 +21,6 @@ import { StoreModule } from './store/store.module';
     UsersModule,
     AuthModule,
     StoreModule,
-    ProductModule,
   ],
   controllers: [AppController, ServiceController],
   providers: [AppService],
