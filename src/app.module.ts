@@ -11,6 +11,10 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { StoreModule } from './store/store.module';
+import { ServiceController } from './service/service.controller';
+import { ProductModule } from './product/product.module';
+import { StoreModule } from './store/store.module';
 
 @Module({
   imports: [
@@ -18,8 +22,10 @@ import { AuthModule } from './auth/auth.module';
     MongooseModule.forRoot(process.env.MONGODB_URI),
     UsersModule,
     AuthModule,
+    StoreModule,
+    ProductModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, ServiceController],
   providers: [AppService],
 })
 export class AppModule implements NestModule {
