@@ -13,6 +13,7 @@ export class AuthService {
   async validateUser(email: string, password: string): Promise<any> {
     const user = await this.usersService.findOne(email);
 
+    // user가 없을시 500
     const hased = await bcrypt.hash(password, 10);
     const isMatch = await bcrypt.compare(user.password, hased);
 
