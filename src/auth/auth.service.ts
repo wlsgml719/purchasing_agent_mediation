@@ -15,7 +15,7 @@ export class AuthService {
 
     // user가 없을시 500
     const hased = await bcrypt.hash(password, 10);
-    const isMatch = await bcrypt.compare(user.password, hased);
+    const isMatch = await bcrypt.compare(user?.password, hased);
 
     if (!isMatch) null;
 
