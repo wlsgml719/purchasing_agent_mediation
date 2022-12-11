@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { ForbiddenException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateStoreDto } from './dto/create-store.dto';
@@ -10,7 +10,9 @@ export class StoreService {
     @InjectModel(Store.name) private storeModel: Model<StoreDocument>,
   ) {}
 
-  async create(createStoreDto: CreateStoreDto): Promise<Store> {
+  async create(user, createStoreDto: CreateStoreDto): Promise<Store> {
+    if (user.role != 'Seller') throw new ForbiddenException();
+
     const createdStore = new this.storeModel(createStoreDto);
     return createdStore.save();
   }
