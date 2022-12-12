@@ -16,4 +16,8 @@ export class StoreService {
     const createdStore = new this.storeModel(createStoreDto);
     return createdStore.save();
   }
+
+  async delete(storeId: string): Promise<void> {
+    return await this.storeModel.findByIdAndDelete({ _id: storeId });
+  }
 }
