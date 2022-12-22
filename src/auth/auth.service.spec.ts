@@ -1,4 +1,9 @@
+import { JwtService } from '@nestjs/jwt';
+import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
+import { User } from '../users/schemas/user.schema';
+import { userModel } from '../users/users.module';
+import { UsersService } from '../users/users.service';
 import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
@@ -6,7 +11,12 @@ describe('AuthService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [AuthService],
+      providers: [
+        AuthService,
+        UsersService,
+        JwtService,
+        { provide: getModelToken(User.name), useValue: userModel },
+      ],
     }).compile();
 
     service = module.get<AuthService>(AuthService);
